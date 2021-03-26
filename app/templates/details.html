@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Your Details{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% if msg %}
+    <h1 class="text-danger">{{msg}}</h1>
+{% endif %}
+    <div class="container w-50">
+        <form method="post" class="form-group">
+            <h1 class="text-center  text-primary"> <i class="fas fa-graduation-cap    "></i> Presonal Details </h1>
+
+            {% csrf_token %}
+            <div class="form-group">
+                {{form|crispy}}
+            </div>
+            <button type="submit" class="btn  btn-primary"> <i class="fas fa-hand-point-up    "></i> Submit</button>
+        </form>
+    </div>
+{% endblock %}

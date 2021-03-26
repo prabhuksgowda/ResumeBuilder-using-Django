@@ -1,0 +1,49 @@
+.head{
+    color: white;
+    padding: 50px 20px 0px 20px;
+}
+.first{
+    padding-block-end: 25px;
+}
+.btn1{
+    padding: 20px;
+    text-size-adjust: 5px;
+    margin-left: 490px;
+    margin-top: 20px;
+}
+.card1{
+    padding-top: 20px;
+}
+
+.cards{
+    padding:0px 50px;
+}
+.section3{
+    padding-top: 20px;
+}
+
+.back{
+    background-color: rgba(0, 0, 0, 0.699);
+    color: white;
+    padding-bottom: 50px;
+}
+.fa{
+    padding-left: 140px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+hr{
+color: white;
+}
+.usercircle{
+    size: 30px;
+    padding-left: 140px;
+    padding-top: 30px;
+}
+.h3{
+    text-align: center;
+}
+.mydetils{
+    padding-top: 80px;
+    padding-bottom: 20px;
+}

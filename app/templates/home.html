@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Resume Maker{% endblock title %}
+
+{% block content %}
+
+<div class="container-fluid " >
+    <div class="row bg-dark bg-dark ">
+        <div class="container">
+            <div class="first">
+                <h1 class="head text-center "> Create Your Professional Resume Online With <br> Resume  Maker</h1> 
+                <h6 class="head text-center">Create your very own professional CV and download it within 15 minutes.</h6>
+                <a name="" id="" class="btn btn-primary  btn1" href=" {% url 'signIn' %} " role="button"><strong>Create your CV </strong></a>
+                <h6 class="head text-center">You'll be 65% more likely to get job.</h6>
+            </div>
+        </div>
+    </div>
+
+<section class="section1">
+    <div class="container card1" >
+        <div class="cards ">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img src="//placehold.it/200" class="img-fluid" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h4 class="card-title">Quick and Easy CV Builder</h4>
+                            <p class="card-text">{% lorem 1 b random %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards ">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img src="//placehold.it/200" class="img-fluid" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h4 class="card-title">More likely to land a job</h4>
+                            <p class="card-text">{% lorem 1 b random %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards ">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="row no-gutters">
+                    <div class="col-auto">
+                        <img src="//placehold.it/200" class="img-fluid" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="card-block px-2">
+                            <h4 class="card-title">Organize your Application</h4>
+                            <p class="card-text">{% lorem 1 b random %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section3">
+    <div class="container">
+
+        <h1 class=" text-center"> What do our users say about ResumeMaker </h1> 
+        <h6 class=" text-center">They  all found their dream job, thanks to ResumeMaker.</h6>
+    </div><br>
+    <div class="container ">
+        <div class="row row-cols-1 row-cols-md-3 g-4 " style="padding:0px 50px 50px 50px">
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded ">
+                <h1 class="text-center" style="padding-top:9px;">  <i class="fas fa-user"></i> </h1>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Prabhu K S</h5>
+                    <p class="card-text">
+                    This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded">
+                <h1 class="text-center" style="padding-top:9px;"> <i class="fas fa-user"></i></i></h1>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Pruthvi</h5>
+                    <p class="card-text">
+                    This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                    </p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded">
+                <h1 class="text-center" style="padding-top:9px;"> <i class="fas fa-user"></i></i></h1>
+
+                <div class="card-body">
+                    <h5 class="card-title text-center">Darshan</h5>
+                    <p class="card-text">
+                   This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+    </div>
+</section>
+
+</div>
+
+{% endblock content %}

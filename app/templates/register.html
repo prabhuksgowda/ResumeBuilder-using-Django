@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock title %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container w-50 bg-light mt-5" style="min-height:550px;min-width:400px" >
+        <form method="POST">{% csrf_token %}
+            <div class="row">
+                <div class="col">
+                        <h1 class="text-center  text-primary">Registration Form</h1>
+
+                        <div class="form-group">
+                            {{form|crispy}}
+                        </div>
+                <div>
+            </div><br>
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit"  class="btn btn-lg btn-primary mx-auto btn-block"  style="width:200px" > <i class="fas fa-user-plus"></i> Register</button>
+                    
+                </div>
+                <div class="col-6">
+                    <a name="" id="" class="btn btn-lg btn-primary mx-auto btn-block" href=" {% url 'signIn' %} " style="width:200px"> <i class="fas fa-user-alt    "></i>  Log In</a>
+                </div>
+            </div>
+      </form>
+        <div>
+    </div>
+{% endblock %}

@@ -1,0 +1,154 @@
+
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{% load static %}
+{% block title %}Resume{% endblock title %}
+{% block content %}
+<form method="POST">{% csrf_token %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-5 back">
+			<div class="usercircle">
+				<i class="fas fa-user-circle fa-10x " aria-hidden="true"></i>
+			</div><br>
+			<div class="cobj">
+                {% for i in pro %}
+				<h3>CAREER OBJECTIVE</h3>
+                {{i.carrearobject}}
+				{% endfor %}
+			</div><hr style="color:white">
+			<div class="personal">
+                                {% for i in pd %}
+				<h3>PERSONAL DETAIL</h3><br>
+					<div class=" row">
+						<label for="text" class="col-4 col-form-label">Date Of Birth :</label> 
+						<div class="col-8">
+						{{i.dob}}
+						</div>
+					</div>
+					<div class=" row">
+						<label for="text1" class="col-4 col-form-label">Nationality :</label> 
+						<div class="col-8">
+                                                {{i.nationality}}
+						</div>
+					</div>
+					<div class=" row">
+						<label for="text2" class="col-4 col-form-label">Gender :</label> 
+						<div class="col-8">
+                            {{i.gender}}
+						</div>
+					</div>
+					<div class=" row">
+						<label for="text3" class="col-4 col-form-label">Father Name     :</label> 
+						<div class="col-8">
+                            {{i.fathername}}
+        				</div>
+					</div>
+                                        <div class=" row">
+						<label for="text3" class="col-4 col-form-label">Address     :</label> 
+						<div class="col-8">
+                            {{i.address}}
+        				</div>
+					</div> 
+			</div>
+			<hr style="color:white">
+
+			<div class="Strength">
+				<h3>STRENGTHS</h3>
+				<div class="col-8">
+                  	<li>{{i.strength}}</li>
+				</div>
+			</div><br><br>
+                        <hr style="color:white">
+
+			<div class="Strength">
+				<h3>Hobbies</h3>
+				<div class="col-8">
+                	<li>{{i.hobbies}}</li>
+				</div>
+			</div><br><br>
+            {% endfor %}
+
+		</div>
+		<div class="col-md-7">
+
+			<div class="mydetils">
+				{% for i in pro %}
+				<div class=" row">
+					<div class="col-6 ">
+                        <h1> {{i.name}} </h1>
+					</div>
+					<div class="col-6 text-left">
+					<strong>Email :</strong>    {{i.email}}<br> 
+					<strong>Mobile :</strong> {{i.mobile}}<br>
+					<strong>LinkedIn:</strong>   {{i.linkedin}}<br>
+					</div>
+				</div>
+				{% endfor %}
+			</div><hr>
+
+			<div class="education"> 
+				<h3> EDUCATION</h3><br>
+				<div class="degree">
+					{% for i in edu  %}
+					<div class=" row">
+						<div class="col-7 ">
+						College Name : {{i.collagename}}<br>
+						Branch : {{i.branch}}<br>
+						CGPA : {{i.cgpa}}<br>
+						Year Of Pass : {{i.yearofpass}}
+						</div>
+						<div class="col-5">
+							University : {{i.university}}
+						</div>
+					</div>
+					{% endfor %}
+					<hr>
+
+					<div class="project">
+						<h3> PROJRCTS </h3><br>
+						{% for i in proj %}
+						<div class=" row">
+							<div class="col-12 ">
+								<b>{{i.projecttitle}}</b><br>
+								<div class="form-group">
+								<b style=" text-align: justify;">Description</b> :  {{i.prodescrip}}
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<hr>
+					
+					<div class="Skils">
+						<h3> SKILS </h3>
+						{% for i in edu %}
+						<div class=" row">
+							<div class="col-8 ">
+								<ul>
+								<li><b>Programing Language :</b>	{{i.programinglang}}</li>
+								<li><b>Frontend Language  :</b> {{i.frontendlng}}</li>
+							</div>
+						</div>
+						{% endfor %}
+					<div><br><hr>
+
+					<div class="Decleration">
+						<h3> DECLERATION </h3>
+						<div class=" row">
+							<div class="col ">
+								<p>I hereby declare that all the details in the application are true, complete and correct to the best of my knowledge and belief</p>
+							</div>
+						</div>
+					<div><br><hr>
+				</div>
+			
+			</div>
+		</div>
+		
+	</div>
+		
+</div>
+</form>	
+{% endblock  %}
+
+

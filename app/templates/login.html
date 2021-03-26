@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} LogIn {% endblock title %} 
+
+{% block content %}
+  
+    <div class="container w-50 text-light mt-5" style="min-height:550px;min-width:500px;" >
+        <form method="post">
+            <h1 class="text-center m-5  text-primary"> <i class="fas fa-user-alt  fa-2x  "></i> </h1>
+            {% csrf_token %}
+            <div class="form-group " style="color:black;">
+                {{form|crispy}}
+            </div>
+            {% if msg %}
+                <h6 style="color:red">{{msg}}</h6>
+             {% endif %}
+        <button type="submit"  class="btn btn-primary btn-lg  mx-auto text-center"  style="width:200px" ><i class="fas fa-user-alt    "></i> Login</button>
+        </form><br>
+        <a href="{% url 'register' %}"> Don't have Account? Creat here..</a>
+    </div>
+
+{% endblock content %}

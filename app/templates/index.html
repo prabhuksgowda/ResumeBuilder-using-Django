@@ -1,0 +1,216 @@
+{% extends 'base.html' %}
+{% block title %} Resume{% endblock title %} 
+{% load static %}
+
+
+{% block content %}
+
+<div style="padding:30px 250px 20px 250px;">
+    <div class="card shadow p-3 mb-5 bg-white rounded" >
+        <div class="row no-gutters">
+            <div class="col d-flex justify-content-center">
+                <div class="card-block px-2">
+                    <h3 class="card-title text-capitalize">Creat Your Resume Here <strong > {{user}} </strong></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container-fluid" style="padding:0px 40px">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body ">
+                        <h1 class="text-center"> <i class="fas fa-user-circle fa-3x   "></i> </h1>
+                        <h5 class="card-title text-center">Profile Details</h5>
+                        <p class="card-text">Your Profile details like Name, Email, Mobile, etc....</p>
+                        <a href="{% url 'details' %}" class="btn btn-primary  "><i class="fas fa-hand-point-right    "></i> Add Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body ">
+                        <h1 class="text-center"> <i class="fas fa-graduation-cap fa-3x    "></i> </h1>
+                        <h5 class="card-title text-center">Profile Details</h5>
+                        <p class="card-text">Your Education details like CollageName, Branch,  etc....</p>
+                        <a href="{% url 'education' %}" class="btn btn-primary  "><i class="fas fa-hand-point-right"></i> Add Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body ">
+                        <h1 class="text-center"> <i class="fas fa-book fa-3x   "></i> </i> </h1>
+                        <h5 class="card-title text-center">Project Details</h5>
+                        <p class="card-text"> Your Project details like ProjectTitle, Description etc....</p>
+                        <a href="{% url 'project' %}" class="btn btn-primary  "><i class="fas fa-hand-point-right "></i> Add Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
+                    <div class="card-body ">
+                        <h1 class="text-center"> <i class="fas fa-user-circle fa-3x   "></i> </h1>
+                        <h5 class="card-title text-center">Personal Details</h5>
+                        <p class="card-text">Enter your Profile details like DateOfBirth, Gender etc....</p>
+                        <a href="{% url 'personaldetails' %}" class="btn btn-primary  "> <i class="fas fa-hand-point-right    "></i> Add Here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<section>
+
+<section >
+    <div class="container" style="padding-bottom:40px">
+        <div class="row">
+            <h3 class="text-center " style="padding:20px 460px"> Personal Details</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> <i class="fas fa-user    "></i> Name</th>
+                        <th scope="col"> <i class="fas fa-envelope    "></i> Email</th>
+                        <th scope="col"> <i class="fas fa-mobile    "></i> Mobile</th>
+                        <th scope="col"> <i class="fas fa-linkedin-in    "></i> LinkedIn</th>
+                        <th scope="col"> <i class="fas fa-object-group    "></i> Carrear Object</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in pro  %}
+                    <tr>
+                        <th scope="row">{{i.name}}</th>
+                        <td>{{i.email}}</td>
+                        <td>{{i.mobile}}</td>
+                        <td>{{i.linkedin}}</td>
+                        <td>{{i.carrearobject}}</td>
+                        <td><a href="{% url 'edit_details' %}" class="btn btn-primary" ><i class="fas fa-edit    "></i> Edit</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container" style="padding-bottom:40px">
+        <div class="row">
+            <h3 style="padding:20px 460px "> Education Details</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> <i class="fas fa-school    "></i> College Name </th>
+                        <th scope="col"> <i class="fas fa-university    "></i> University </th>
+                        <th scope="col"> <i class="fas fa-code-branch    "></i> Branch </th>
+                        <th scope="col"> <i class="fas fa-calendar    "></i> PassedOut  </th>
+                        <th scope="col"> <i class="fas fa-tasks    "></i> Programing Lang.. </th>
+                        <th scope="col"> <i class="fas fa-tasks    "></i> Frontend Lang.. </th>
+                        <th scope="col"> <i class="fas fa-claw-marks    "></i> % Or CGPA </th>
+                        <th scope="col"></th>              
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in edu  %}
+                    <tr>
+                        <th scope="row">{{i.collagename}}</th>
+                        <td>{{i.university}}</td>
+                        <td>{{i.branch }}</td>
+                        <td>{{i.yearofpass }}</td>
+                        <td>{{i.programinglang }}</td>
+                        <td>{{i.frontendlng }}</td>
+                        <td>{{i.cgpa }}</td>
+                        <td><a href="{% url 'edit_education'  i.id%}" class="btn btn-primary" ><i class="fas fa-edit    "></i> Edit</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="padding-bottom:40px">
+        <div class="row">
+            <h3 style="padding:20px 460px "> Project Details</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> <i class="fas fa-book" aria-hidden="true"></i> Project Title </th>
+                        <th scope="col"> <i class="fas fa-envelope-open-text    "></i>  Project Description </th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in proj  %}
+                    <tr>
+                        <th scope="row">{{i.projecttitle }}</th>
+                        <td>{{i.prodescrip }}</td>
+                        <td></td>
+                        
+                        <td style="margin-left:250px"><a href="{% url 'edit_project'  i.id%}" class="btn btn-primary" ><i class="fas fa-edit "></i> Edit</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" style="padding-bottom:40px">
+        <div class="row">
+            <h3 style="padding:20px 460px"> Personal Details</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"><i class="fas fa-calendar    "> Date of Birth </th>
+                        <th scope="col"> <i class="fas fa-male    "></i> Gender </th>
+                        <th scope="col"> <i class="fas fa-globe" aria-hidden="true"></i> Nationality</th>
+                        <th scope="col"> <i class="fas fa-male    "></i> Father Name </th>
+                        <th scope="col"> <i class="fas fa-address-card    "></i> Address </th>
+                        <th scope="col"> <i class="fas fa-hand-rock-o" aria-hidden="true"></i> Strength </th>
+                        <th scope="col"> Hobbies</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in pd  %}
+                    <tr>
+                        <th scope="row">{{i.dob}}</th>
+                        <td>{{i.gender}}</td>
+                        <td>{{i.nationality}}</td>
+                        <td>{{i.fathername}}</td>
+                        <td>{{i.address}}</td>
+                        <td>{{i.strength}}</td>
+                        <td>{{i.hobbies}}</td>
+                        <td><a href="{% url 'edit_personaldetails'  i.id%}" class="btn btn-primary" ><i class="fas fa-edit    "></i> Edit</a></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h3 class="text-center">View You Resume</h3>
+        <h1 class="text-center"><a name="" id="" class="btn btn-primary" href="{% url 'resume' %}" role="button"> <i class="fas fa-hand-point-right "></i>  View Here   </a></h1>
+    </div>
+
+</section>
+
+{% endblock %}
